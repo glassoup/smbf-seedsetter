@@ -1,0 +1,7 @@
+dabdbeef
+
+Press F1 to set to the seed above when at seed selection screen.
+Assumes default controls as
+Ctrl for Misc, Right Arrow, Down arrow, up arrow.
+
+Script only reads the first 8 characters, so you can use this space to keep seeds or something.
