@@ -10,20 +10,25 @@ ExitApp
 f1::
 {
 if !FileExist("seed.txt")
-  msgbox, seed.txt is missing
+	msgbox, seed.txt is missing
 
 seedFile := FileOpen("seed.txt", "r")
 seedTarget := []
 loop 8 {
-  seedTarget[A_Index] := Format("{:i}", "0x" seedFile.read(1))
+	seedTarget[A_Index] := Format("{:i}", "0x" seedFile.read(1))
 }
 seedFile.close()
 
-smbf := new _ClassMemory("Super Meat Boy Forever v. 6202.1271.1563.138", "", hProcessCopy) 
-baseAddress := smbf.baseAddress
+if WinExist("Super Meat Boy Forever v. 6202.1271.1563.138") {
+	smbf := new _ClassMemory("Super Meat Boy Forever v. 6202.1271.1563.138", "", hProcessCopy)
+	memoryOffset := 0x5E2540
+} else if WinExist("Super Meat Boy Forever v. 6314.1573.1853.145") {
+	smbf := new _ClassMemory("Super Meat Boy Forever v. 6314.1573.1853.145", "", hProcessCopy)
+	memoryOffset := 0x558370
+}
 
 addressArr := []
-addressArr[1] := baseAddress + 0x5E2540 
+addressArr[1] := smbf.baseAddress + memoryOffset
 loop 7 {
 	addressArr[A_Index + 1] := (addressArr[A_Index] + 8)
 }

@@ -1,4 +1,4 @@
-dabdbeef
+deadbeef
 
 Press F1 to set to the seed above when at seed selection screen.
 Assumes default controls as
