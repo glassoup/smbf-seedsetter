@@ -19,7 +19,10 @@ loop 8 {
 }
 seedFile.close()
 
-if WinExist("Super Meat Boy Forever v. 6202.1271.1563.138") {
+if WinExist("Super Meat Boy Forever v. 6480.1704.1895.145") {
+	smbf := new _ClassMemory("Super Meat Boy Forever v. 6480.1704.1895.145", "", hProcessCopy)
+	memoryOffset := 0x55A5D0
+} else if WinExist("Super Meat Boy Forever v. 6202.1271.1563.138") {
 	smbf := new _ClassMemory("Super Meat Boy Forever v. 6202.1271.1563.138", "", hProcessCopy)
 	memoryOffset := 0x5E2540
 } else if WinExist("Super Meat Boy Forever v. 6314.1573.1853.145") {
