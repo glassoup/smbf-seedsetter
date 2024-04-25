@@ -28,6 +28,9 @@ if WinExist("Super Meat Boy Forever v. 6480.1704.1895.145") {
 } else if WinExist("Super Meat Boy Forever v. 6314.1573.1853.145") {
 	smbf := new _ClassMemory("Super Meat Boy Forever v. 6314.1573.1853.145", "", hProcessCopy)
 	memoryOffset := 0x558370
+} else if WinExist("Super Meat Boy Forever v. 6756.1851.1963.152") {
+	smbf := new _ClassMemory("Super Meat Boy Forever v. 6756.1851.1963.152", "", hProcessCopy)
+	memoryOffset := 0x5704F0
 }
 
 addressArr := []
